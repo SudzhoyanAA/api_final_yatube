@@ -12,32 +12,40 @@
 
 4) Аутентифицированным пользователям разрешено изменение и удаление своего контента; в остальных случаях доступ предоставляется только для чтения.
 
-# Установка
+5) Для списка постов применен limit и offset(Пример запроса: /api/v1/posts/?limit=100&offset=400)
+
+6) Для раздела подписок используется search filter.
+
+# Установка.
 
 ## 1) Склонировать репозиторий(git clone ...)
-## 2) Создать и активировать виртуальное окружение для проекта
+## 2) Создать и активировать виртуальное окружение для проекта.
 
 python -m venv venv
 
-source venv/scripts/activate
+source venv/Scripts/activate
 
-## 3) Установить зависимости
-python pip install -r requirements.txt
+## 3) Установить зависимости.
+pip install -r requirements.txt
 
-## 4) Сделать миграции
+## 4) Сделать миграции.
 python manage.py makemigrations
 python manage.py migrate
 
-## 5) Запустить сервер
+## 5) Запустить сервер.
 python manage.py runserver
 
-# Примеры
+# Примеры.
 
-Для доступа к API необходимо получить токен: 
-Нужно выполнить POST-запрос localhost:8000/api/v1/auth/ передав поля username и password. API вернет JWT-токен
+Для доступа к API необходимо получить токен:  
+Нужно выполнить POST-запрос localhost:8000/api/v1/auth/ передав поля username и password. API вернет JWT-токен.  
+При отправке запроса передавайте токен в заголовке Authorization: Bearer <токен>.  
+Дальше, передав токен можно будет обращаться к методам, например:  
 
-Дальше, передав токен можно будет обращаться к методам, например: 
+1)/api/v1/posts/  
+2)/api/v1/posts/8/comments/  
+3)/api/v1/posts/12/comments/3/  
+4)/api/v1/groups/  
+5)/api/v1/follow/  
 
-/api/v1/posts/ (GET, POST, PUT, PATCH, DELETE)
 
-При отправке запроса передавайте токен в заголовке Authorization: Bearer <токен>
