@@ -43,9 +43,13 @@ python manage.py runserver
 Дальше, передав токен можно будет обращаться к методам, например: 
 
 /api/v1/posts/ 
+
 /api/v1/posts/8/comments/
+
 /api/v1/posts/12/comments/3/
+
 /api/v1/groups/
+
 /api/v1/follow/
 
 
