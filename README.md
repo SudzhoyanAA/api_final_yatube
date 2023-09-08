@@ -12,6 +12,10 @@
 
 4) Аутентифицированным пользователям разрешено изменение и удаление своего контента; в остальных случаях доступ предоставляется только для чтения.
 
+5) Для списка постов применен limit и offset(Пример запроса: /api/v1/posts/?limit=100&offset=400)
+
+6) Для раздела подписок используется search filter
+
 # Установка
 
 ## 1) Склонировать репозиторий(git clone ...)
@@ -19,10 +23,10 @@
 
 python -m venv venv
 
-source venv/scripts/activate
+source venv/Scripts/activate
 
 ## 3) Установить зависимости
-python pip install -r requirements.txt
+pip install -r requirements.txt
 
 ## 4) Сделать миграции
 python manage.py makemigrations
