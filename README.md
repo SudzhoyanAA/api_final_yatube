@@ -14,34 +14,38 @@
 
 5) Для списка постов применен limit и offset(Пример запроса: /api/v1/posts/?limit=100&offset=400)
 
-6) Для раздела подписок используется search filter
+6) Для раздела подписок используется search filter.
 
-# Установка
+# Установка.
 
 ## 1) Склонировать репозиторий(git clone ...)
-## 2) Создать и активировать виртуальное окружение для проекта
+## 2) Создать и активировать виртуальное окружение для проекта.
 
 python -m venv venv
 
 source venv/Scripts/activate
 
-## 3) Установить зависимости
+## 3) Установить зависимости.
 pip install -r requirements.txt
 
-## 4) Сделать миграции
+## 4) Сделать миграции.
 python manage.py makemigrations
 python manage.py migrate
 
-## 5) Запустить сервер
+## 5) Запустить сервер.
 python manage.py runserver
 
-# Примеры
+# Примеры.
 
 Для доступа к API необходимо получить токен: 
-Нужно выполнить POST-запрос localhost:8000/api/v1/auth/ передав поля username и password. API вернет JWT-токен
-
+Нужно выполнить POST-запрос localhost:8000/api/v1/auth/ передав поля username и password. API вернет JWT-токен.
+При отправке запроса передавайте токен в заголовке Authorization: Bearer <токен>.
 Дальше, передав токен можно будет обращаться к методам, например: 
 
-/api/v1/posts/ (GET, POST, PUT, PATCH, DELETE)
+/api/v1/posts/ 
+/api/v1/posts/8/comments/
+/api/v1/posts/12/comments/3/
+/api/v1/groups/
+/api/v1/follow/
 
-При отправке запроса передавайте токен в заголовке Authorization: Bearer <токен>
+
