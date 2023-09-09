@@ -27,6 +27,14 @@ class Post(models.Model):
         related_name='posts', blank=True, null=True
     )
 
+    class Meta:
+        ordering = ['pub_date']
+    # Вот тут я вообще выпал, делаю сортировку от новых к старым(-pub_date)
+    # и падает тест с такой ошибкой:
+    # Проверьте, что для авторизованного пользователя ответ на GET-запрос
+    # к `/api/v1/posts/ с указанием параметров запроса `limit` и `offset``
+    # содержит поле `author` с именем автора каждого из постов.
+
     def __str__(self):
         return self.text
 
